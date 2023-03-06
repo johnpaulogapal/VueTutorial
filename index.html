@@ -4,23 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue Tutorial</title>
 
     <!-- Nunito Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <!-- Tailwind Output Css -->
-    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
 
     <!-- Custom Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p>Hello World</p>
-    <h1>Hello World</h1>
+    <div id="app">
+        <!-- <p v-if="hidden" class="text-red-500 text-5xl">{{ title }} - {{ author }} - {{ age }}</p>
 
-    <p class="text-red-500">Testing</p>
+        <button v-on:click="age++" class="p-2 bg-blue-500 m-5 text-white tracking-wider rounded shadow-xl hover:bg-blue-700">Increase age</button>
+        <button v-on:click="age--" class="p-2 bg-red-500 m-5 text-white tracking-wider rounded shadow-xl hover:bg-red-700">Decrease age</button>
+        <button @click="changeName('OOP')" class="p-2 bg-green-500 m-5 text-white tracking-wider rounded shadow-xl hover:bg-green-700">Change my Name</button>
+        <button @click="toggleHidden" class="p-2 bg-purple-500 m-5 text-white tracking-wider rounded shadow-xl hover:bg-purple-700">
+            <span v-if="hidden">Hide</span>
+            <span v-else>Reveal</span>
+        </button> -->
+
+        <div class="h-screen w-full grid place-items-start p-5">
+            <table>
+                <tr>
+                    <th class="pb-5">
+                        <button @click="changeHidden1" class="py-1 px-2 mx-2 bg-red-500 text-white rounded shadow-xl hover:bg-red-700">Tab I</button>
+                        <button @click="changeHidden2" class="py-1 px-2 mx-2 bg-blue-500 text-white rounded shadow-xl hover:bg-blue-700">Tab II</button>
+                        <button @click="changeHidden3" class="py-1 px-2 mx-2 bg-green-500 text-white rounded shadow-xl hover:bg-green-700">Tab III</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div v-show="hidden1" class="hidden-1">
+                            <ul>
+                                <li v-for="post in posts" class="mb-8 space-y-2">
+                                    <h1 class="font-bold text-xl tracking-wide">{{ post.title }}</h1>
+                                    <p class="tracking-widest">{{ post.description }}</p>
+                                    <p class="text-xs text-gray-500 tracking-widest">{{ post.author }}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-show="hidden2"class="hidden-2 opacity-0">
+                            This is 2 ipsum dolor sit amet, consectetur adipisicing elit. Fugit unde eius repellat adipisci pariatur? Reprehenderit aspernatur nam ea praesentium cumque, est, nihil dolorum quod veniam impedit quaerat eius recusandae. Enim?
+                        </div>
+                        <div v-show="hidden3" class="hidden-3  opacity-0">
+                            This is 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti, voluptas quibusdam animi mollitia voluptatum possimus debitis cupiditate sit tempore distinctio obcaecati est iste consectetur, nulla ad nam excepturi saepe.
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

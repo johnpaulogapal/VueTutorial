@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{html,js}",
     "/index.html",
+    "/app/app.js",
     '*.{html,js}'
   ],
   theme: {
